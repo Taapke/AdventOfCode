@@ -40,10 +40,14 @@ public class day1 {
     }
 
     private static List<String> getListInput(String filePath) {
+        return getInput(filePath);
+    }
+
+    public static List<String> getInput(String filePath) {
         ArrayList<String> inputList = new ArrayList<>();
         File file = new File(filePath);
-        try (Scanner scanner = new Scanner(file)){
-            while(scanner.hasNextLine()) {
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
                 inputList.add(scanner.nextLine());
             }
             return inputList;

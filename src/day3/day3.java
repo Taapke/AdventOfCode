@@ -1,10 +1,8 @@
 package day3;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+import static day1.day1.getInput;
 
 public class day3 {
     public static void main(String[] args) {
@@ -55,15 +53,6 @@ public class day3 {
     }
 
     private static List<String> getListInput(String filePath) {
-        ArrayList<String> inputList = new ArrayList<>();
-        File file = new File(filePath);
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                inputList.add(scanner.nextLine());
-            }
-            return inputList;
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        return getInput(filePath);
     }
 }
